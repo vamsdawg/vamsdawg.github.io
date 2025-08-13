@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP</title>
+  <meta name="description" content="Wedding website for Namratha & Vamsi" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html">N &amp; V</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="rsvp.html" class="btn">RSVP</a>
+      <a href="registry.html">Registry</a>
+      <a href="qr.html" title="QR code for invites">QR</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+<main>
+
+<section class="container">
+  <h1>RSVP</h1>
+  <p>Please respond by <strong>October 20, 2025</strong>. One form per household is perfect — include your plus-ones.</p>
+
+  <div class="card">
+    <form id="rsvpForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Replace the action with your Formspree endpoint (or embed a Google Form instead) -->
+      <div class="form-row">
+        <label for="name">Full Name*</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+      <div class="form-row">
+        <label for="email">Email*</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" />
+      </div>
+
+      <fieldset class="form-row">
+        <legend>Which events will you attend?</legend>
+        <label><input type="checkbox" name="events" value="Mehndi" /> Mehndi</label>
+        <label><input type="checkbox" name="events" value="Sangeet" /> Sangeet</label>
+        <label><input type="checkbox" name="events" value="Ceremony" /> Ceremony</label>
+        <label><input type="checkbox" name="events" value="Reception" /> Reception</label>
+      </fieldset>
+
+      <div class="form-row">
+        <label for="guests">Total guests in your party (including you)</label>
+        <input id="guests" name="guests" type="number" min="1" max="12" value="1" />
+      </div>
+
+      <div class="form-row">
+        <label for="diet">Dietary needs / allergies</label>
+        <input id="diet" name="diet" type="text" placeholder="Vegetarian, nut allergy, etc." />
+      </div>
+
+      <div class="form-row">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know?"></textarea>
+      </div>
+
+      <!-- honeypot -->
+      <input type="text" name="_gotcha" style="display:none" />
+      <input type="hidden" name="_subject" value="Wedding RSVP" />
+      <input type="hidden" name="source" value="website" />
+
+      <button class="btn btn-primary" type="submit">Submit RSVP</button>
+      <p id="rsvpThanks" class="success" hidden>Thank you! Your RSVP has been received.</p>
+    </form>
+    <p class="muted small">Prefer Google Forms? Create one and paste its <em>embed</em> snippet here instead of this form.</p>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Namratha &amp; Vamsi</p>
+    <p class="muted"><a href="qr.html">Get the QR code</a> • <a href="rsvp.html">RSVP</a></p>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
