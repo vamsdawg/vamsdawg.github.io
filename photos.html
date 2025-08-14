@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photos</title>
+  <meta name="description" content="Photos - Namratha & Vamsi" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html">N &amp; V</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="rsvp.html" class="btn">RSVP</a>
+      <a href="registry.html">Registry</a>
+      <a href="qr.html" title="QR code for invites">QR</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+<main>
+
+<section class="container">
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 2.8rem;">Photos</h1>
+  <p class="muted">Click any photo to view it full-size.</p>
+
+  <div class="gallery" id="gallery">
+    <!-- Replace these placeholders with your real images -->
+    <img src="assets/img/couple.jpg" alt="Photo 1" />
+    <img src="assets/img/couple.jpg" alt="Photo 2" />
+    <img src="assets/img/couple.jpg" alt="Photo 3" />
+    <img src="assets/img/couple.jpg" alt="Photo 4" />
+    <img src="assets/img/couple.jpg" alt="Photo 5" />
+    <img src="assets/img/couple.jpg" alt="Photo 6" />
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);align-items:center;justify-content:center;z-index:1000;">
+  <img id="lightboxImg" src="" alt="Full size" style="max-width:92vw;max-height:90vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.4)" />
+</div>
+
+</main>
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Namratha &amp; Vamsi</p>
+    <p class="muted"><a href="qr.html">Get the QR code</a> • <a href="rsvp.html">RSVP</a></p>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+  // Simple lightbox JS
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    document.getElementById('gallery').addEventListener('click', (e)=>{
+      const img = e.target.closest('img');
+      if(!img) return;
+      lbImg.src = img.src;
+      lb.style.display = 'flex';
+    });
+    lb.addEventListener('click', ()=>{ lb.style.display = 'none'; lbImg.src=''; });
+  })();
+</script>
+</body>
+</html>
