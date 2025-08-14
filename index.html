@@ -9,6 +9,75 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      background: #f8f5f0;
+      color: #3a1a1a;
+      font-family: 'Inter', 'Playfair Display', serif;
+    }
+    .nav {
+      background: #800000;
+      color: #fffbe9;
+      border-bottom: 3px solid #d4af37;
+    }
+    .nav__links a {
+      color: #fffbe9;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      border-radius: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      transition: background 0.2s;
+    }
+    .nav__links a.btn, .btn.btn-primary {
+      background: #800000;
+      color: #fffbe9;
+      border: 2px solid #d4af37;
+    }
+    .nav__links a:hover, .btn:hover {
+      background: #a83232;
+      color: #fffbe9;
+    }
+    .footer {
+      background: #800000;
+      color: #fffbe9;
+      border-top: 3px solid #d4af37;
+    }
+    .card, .timeline__item, .link-card {
+      background: #fffbe9;
+      border: 2px solid #d4af37;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(128,0,0,0.04);
+      color: #3a1a1a;
+    }
+    .date-overlay span {
+      background: rgba(212,175,55,0.15);
+      color: #800000;
+      border: 2px solid #d4af37;
+    }
+    h1, h2, h3 {
+      color: #800000;
+    }
+    .btn {
+      background: #800000;
+      color: #fffbe9;
+      border: 2px solid #d4af37;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn.btn-primary {
+      background: #a83232;
+      color: #fffbe9;
+      border: 2px solid #d4af37;
+    }
+    .btn:hover {
+      background: #d4af37;
+      color: #800000;
+    }
+    .muted, .subtitle, .at-a-glance, .feature-list {
+      color: #3a1a1a;
+    }
+  </style>
 </head>
 <body>
 <header class="nav">
@@ -28,17 +97,18 @@
 
 <section class="hero">
   <div class="container">
-    <div class="hero-photo-bg" style="position:relative;width:100%;max-width:1200px;margin:2rem auto 0 auto;display:flex;flex-direction:column;align-items:center;">
+    <div style="text-align:center;margin:2rem 0 0 0;">
+      <h1 style="margin-bottom:2rem;">Namratha &amp; Vamsi</h1>
+    </div>
+    <div class="hero-photo-bg" style="position:relative;width:100%;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;">
       <img src="assets/img/couple.jpg" alt="Namratha and Vamsi" style="width:100%;max-width:900px;height:auto;display:block;border-radius:1rem;box-shadow:0 4px 24px rgba(0,0,0,0.08);background:#fff;filter:brightness(0.97);">
-      <div class="date-overlay" style="position:relative;margin-top:-3rem;width:100%;text-align:center;">
+      <div class="date-overlay" style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);width:auto;text-align:center;">
         <span style="font-size:2.5rem;font-weight:700;color:#111;background:rgba(255,255,255,0.75);padding:0.75rem 2rem;border-radius:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
           February 28th 2026 | Atlanta, GA
         </span>
       </div>
     </div>
     <div style="text-align:center;margin:2rem 0 0 0;">
-      <h1>Namratha &amp; Vamsi</h1>
-      <p class="subtitle">We're getting married!</p>
       <div class="cta-group" style="margin-top:2rem;">
         <a class="btn btn-primary" href="rsvp.html">RSVP Now</a>
         <a class="btn" href="events.html">View Schedule</a>
